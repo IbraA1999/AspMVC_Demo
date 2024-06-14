@@ -1,0 +1,42 @@
+﻿.sous-navbar {
+    background-color: #f8f8f8;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+}
+
+.ul-sous-topbar {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.ul-sous-topbar  > li {
+    margin: 0 10px;
+    font-size: 25px;
+}
+
+.ul-sous-topbar  > li a {
+    text-decoration: none;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    color: black;
+    font-size: 16px;
+    padding: 8px 12px;
+    font-size: 1.3rem;
+    border-bottom: none;  /* Supprime le soulignement par défaut */
+    transition: border-bottom 0.3s ease;  /* Transition sur la bordure */
+
+}
+
+.ul-sous-topbar  > li a:hover {
+    border-bottom: 2px solid #cc102c;  /* Style du soulignement au hover */
+}

@@ -1,4 +1,5 @@
 ﻿using AspMVC_Demo.DAL.InterfaceRepositories;
+using AspMVC_Demo.DAL.MapperData;
 using AspMVC_Demo.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToolsBox;
 
 namespace AspMVC_Demo.DAL.Repositories
 {
@@ -19,9 +21,12 @@ namespace AspMVC_Demo.DAL.Repositories
             _connectionString = connectionString;
         }
 
-        public Contact? Create(Contact Contact)
+        public Contact? Create(Contact contact)
         {
-            throw new NotImplementedException();
+            _connectionString?.Open();
+            _connectionString?.ExecuteNonQuery("CreateContact", true, new { contact.Nom, contact.Prenom, contact.Email });
+
+            return contact;
         }
 
         public bool Delete(int id)
@@ -31,7 +36,11 @@ namespace AspMVC_Demo.DAL.Repositories
 
         public IEnumerable<Contact> GetAll()
         {
-            throw new NotImplementedException();
+
+            _connectionString?.Open();
+            IEnumerable<Contact> contacts = _connectionString.ExecuteReader("SELECT * FROM Contact", contact => contact.ToContact());
+
+            return contacts;
         }
 
         public Contact? GetById(int id)

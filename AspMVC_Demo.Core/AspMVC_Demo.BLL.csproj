@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AspMVC_Demo.DAL\AspMVC_Demo.DAL.csproj" />
     <ProjectReference Include="..\AspMVC_Demo.Domain\AspMVC_Demo.Domain.csproj" />
   </ItemGroup>
 

@@ -20,3 +20,66 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 18px;
+    text-align: left;
+    margin-top: 25px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+tr:hover {
+    background-color: #CC102C;
+}
+
+td:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+tr:nth-child(even):hover {
+    background-color: #CC102C;
+}
+
+.AfficherContact-Prenom {
+    border-top-left-radius: 25px;
+    padding: 20px 20px;
+    background: rgb(255,0,202);
+    background: linear-gradient(90deg, rgba(255,0,202,1) 0%, rgba(255,68,0,1) 100%);
+}
+
+.AfficherContact-Nom {
+    background: rgb(48,150,0);
+    padding: 20px 20px;
+    background: linear-gradient(90deg, rgba(48,150,0,1) 0%, rgba(19,203,12,1) 72%, rgba(108,255,0,1) 100%);
+}
+
+.AfficherContact-Email {
+    padding: 20px 20px;
+    background: rgb(251,220,2);
+    background: linear-gradient(90deg, rgba(251,220,2,1) 0%, rgba(255,68,0,1) 100%);
+}
+
+.AfficherContact-Detail {
+    background: rgb(195,34,162);
+    background: linear-gradient(90deg, rgba(195,34,162,1) 0%, rgba(255,0,202,1) 100%);
+}
+
+.AfficherContact-Modifier {
+    padding: 20px 20px;
+    background: rgb(15,160,184);
+    background: linear-gradient(90deg, rgba(15,160,184,1) 0%, rgba(5,195,255,1) 100%);
+}
+
+.AfficherContact-Supprimer {
+    padding: 20px 20px;
+    background: rgb(181,35,35);
+    background: linear-gradient(90deg, rgba(181,35,35,1) 0%, rgba(251,0,68,1) 100%);
+}

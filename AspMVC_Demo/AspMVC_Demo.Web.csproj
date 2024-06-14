@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AspMVC_Demo.Core\AspMVC_Demo.BLL.csproj" />
+    <ProjectReference Include="..\AspMVC_Demo.DAL\AspMVC_Demo.DAL.csproj" />
     <ProjectReference Include="..\AspMVC_Demo.Domain\AspMVC_Demo.Domain.csproj" />
   </ItemGroup>
 

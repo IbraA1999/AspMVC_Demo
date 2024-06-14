@@ -14,6 +14,6 @@ namespace AspMVC_Demo.Domain.Entities
 
         public required string Prenom { get; set; }
 
-        public string Email { get; set; }
+        public required string Email { get; set; }
     }
 }

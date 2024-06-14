@@ -1,5 +1,9 @@
 ﻿using AspMVC_Demo.BLL.InterfaceService;
+using AspMVC_Demo.Domain.Entities;
+using AspMVC_Demo.Web.Mapper;
+using AspMVC_Demo.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 
 namespace AspMVC_Demo.Web.Controllers
 {
@@ -13,79 +17,52 @@ namespace AspMVC_Demo.Web.Controllers
             _contactService = contactService;
         }
 
-        // GET: ContactController
-        public ActionResult Index()
+        public IActionResult GererContact()
         {
             return View();
         }
 
-        // GET: ContactController/Details/5
-        public ActionResult Details(int id)
+        public IActionResult AfficherContact() 
         {
-            return View();
-        }
+            IEnumerable<Contact> contacts = _contactService.GetAll();
 
-        // GET: ContactController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ContactController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
+            if (contacts.Count() > 0)
             {
-                return RedirectToAction(nameof(Index));
+                return View(contacts);
             }
-            catch
+
+            return RedirectToAction("GererContact");
+        }
+
+        [HttpGet]
+        public IActionResult EnregistrerContact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult EnregistrerContact(CreateContactForm contactForm)
+        {
+            Contact contact = contactForm.ToContact();
+            if (!ModelState.IsValid)
             {
                 return View();
             }
-        }
-
-        // GET: ContactController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ContactController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
+            else
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
+                Contact? createContact = _contactService.Create(contact);
+
+                if (createContact is null)
+                {
+                    return View();
+                }
+
+                return RedirectToAction("AfficherContact");
             }
         }
 
-        // GET: ContactController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: ContactController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+
+
     }
 }
