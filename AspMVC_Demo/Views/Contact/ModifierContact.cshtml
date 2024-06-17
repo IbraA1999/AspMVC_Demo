@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier contact</title>
+    <link rel="stylesheet" type="text/css" href="~/css/Header.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Form.css">
+    <link rel="stylesheet" type="text/css" href="~/css/GererContact.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="ul-topbar">
+                <li><a href="~/home/Index">Accueil</a></li>
+                <li><a href="~/home/Contact">Contact</a></li>
+                <li><a href="~/auth/login">Login</a></li>
+                <li><a href="~/auth/register">S'enregistrer</a></li>
+                <li class="dropdown">
+                    <a href="~/Contact/GererContact">Gestion des contacts</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-content">
+                            <a href="~/Contact/AfficherContact">Afficher contact</a>
+                            <a href="~/Contact/EnregistrerContact">Enregistrer contact</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Afficher Contact</h1>
+    <nav class="sous-navbar">
+        <ul class="ul-sous-topbar">
+            <li><a href="~/Contact/AfficherContact">Afficher contact</a></li>
+            <li><a href="~/Contact/EnregistrerContact">Enregistrer un contact</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <form class="form-enregistrement" method="post">
+            <div class="input-box">
+                <label>Prenom</label>
+                <input type="text" name="Prenom" placeholder="John" required />
+            </div>
+            <div class="input-box">
+                <label>nom</label>
+                <input type="text" name="nom" placeholder="Doe" required />
+            </div>
+            <div class="input-box">
+                <label>email</label>
+                <input type="email" name="email" placeholder="exemple@hotmail.fr" required />
+            </div>
+            <button class="btn" type="submit" value="send">Modifier contact</button>
+        </form>
+    </div>
+</body>
+</html>

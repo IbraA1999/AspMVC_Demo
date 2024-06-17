@@ -26,7 +26,7 @@ namespace AspMVC_Demo.BLL.Service
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return _contactRepositorie.Delete(id);
         }
 
         public IEnumerable<Contact> GetAll()
@@ -36,12 +36,19 @@ namespace AspMVC_Demo.BLL.Service
 
         public Contact? GetById(int id)
         {
-            throw new NotImplementedException();
+            Contact? contact = _contactRepositorie.GetById(id);
+
+            if (contact is not null)
+            {
+                return contact; 
+            } 
+
+            return null;
         }
 
         public Contact? Update(Contact Contact)
         {
-            throw new NotImplementedException();
+            return _contactRepositorie.Update(Contact);
         }
     }
 }

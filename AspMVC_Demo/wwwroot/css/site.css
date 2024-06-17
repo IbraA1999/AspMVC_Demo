@@ -28,31 +28,30 @@ table {
     font-size: 18px;
     text-align: left;
     margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius : 25px;
 }
 
 th, td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
-
-tr:hover {
-    background-color: #CC102C;
-}
 
 td:nth-child(even) {
     background-color: #f8f8f8;
 }
 
-tr:nth-child(even):hover {
-    background-color: #CC102C;
-}
 
 .AfficherContact-Prenom {
     border-top-left-radius: 25px;
     padding: 20px 20px;
-    background: rgb(255,0,202);
-    background: linear-gradient(90deg, rgba(255,0,202,1) 0%, rgba(255,68,0,1) 100%);
+    background: rgb(255,156,1);
+    background: linear-gradient(90deg, rgba(255,156,1,1) 42%, rgba(251,0,0,1) 100%);
 }
 
 .AfficherContact-Nom {
@@ -79,7 +78,96 @@ tr:nth-child(even):hover {
 }
 
 .AfficherContact-Supprimer {
+    border-top-right-radius: 25px;
     padding: 20px 20px;
     background: rgb(181,35,35);
     background: linear-gradient(90deg, rgba(181,35,35,1) 0%, rgba(251,0,68,1) 100%);
+}
+
+.btn-tab-suppression {
+    width: 32px;
+    height: 32px
+}
+
+.tr-tfoot {
+    background-color: rgba(251, 0, 68, 0.2);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacement entre les cartes */
+    justify-content: center; /* Centrer les cartes dans le conteneur */
+    width: 50%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.card {
+    flex: 1 1 calc(50% - 20px); /* Chaque carte prend 50% de la largeur moins l'espacement */
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 20px; /* Espacement vertical entre les rangées */
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h3, .card h5 {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.card-Nom h3 {
+    position: relative;
+    left: 40%;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.card-Nom h5 {
+    position: relative;
+    left: 40%;
+    font-size: 20px;
+}
+
+.card-Prenom h3 {
+    position: relative;
+    left: 35%;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.card-Prenom h5 {
+    position: relative;
+    left: 40%;
+    font-size: 20px;
+}
+
+.card-Email h3 {
+    position: relative;
+    left: 40%;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.card-Email h5 {
+    position: relative;
+    left: 30%;
+    font-size: 20px;
+}
+
+.card-Id h3 {
+    position: relative;
+    left: 40%;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.card-Id h5 {
+    position: relative;
+    left: 40%;
+    font-size: 20px;
 }

@@ -61,6 +61,54 @@ namespace AspMVC_Demo.Web.Controllers
             }
         }
 
+        public IActionResult DeleteContact(int id)
+        {
+            bool IsDelete = _contactService.Delete(id);
+
+            if (IsDelete)
+            {
+                return RedirectToAction("AfficherContact");
+            }
+
+            return View("GererContact");
+        }
+
+
+        public IActionResult ModifierContact(int id, CreateContactForm contactForm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+
+                Contact contact = contactForm.ToContact();
+                contact.Id = id;
+                Contact? UpdateIsValid = _contactService.Update(contact);
+
+                if (UpdateIsValid is not null)
+                {
+                    return RedirectToAction("AfficherContact");
+                } else
+                {
+                    return View();
+                }
+            }
+        }
+
+        public IActionResult DetailContact(int id)
+        {
+            Contact? contact = _contactService.GetById(id);
+
+            if (contact is not null)
+            {
+                return View(contact);
+            }
+
+            return RedirectToAction("AfficherContact");
+        }
+
 
 
 

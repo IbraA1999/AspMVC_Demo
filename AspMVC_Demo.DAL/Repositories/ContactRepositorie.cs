@@ -31,7 +31,10 @@ namespace AspMVC_Demo.DAL.Repositories
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            _connectionString.Open();
+            int rowsAffected = _connectionString.ExecuteNonQuery("DELETE FROM Contact WHERE id = @id", false, new { id });
+
+            return rowsAffected > 0 ? true : false;
         }
 
         public IEnumerable<Contact> GetAll()
@@ -45,12 +48,19 @@ namespace AspMVC_Demo.DAL.Repositories
 
         public Contact? GetById(int id)
         {
-            throw new NotImplementedException();
+            _connectionString.Open();
+            Contact? contact = _connectionString.ExecuteReader("SELECT * FROM Contact WHERE Id = @Id", db => db.ToContact(), false, new { id }).SingleOrDefault();
+            _connectionString.Close();
+
+            return contact;
         }
 
-        public Contact? Update(Contact Contact)
+        public Contact? Update(Contact contact)
         {
-            throw new NotImplementedException();
+            _connectionString.Open();
+           int rowsAffected =  _connectionString.ExecuteNonQuery("UPDATE Contact SET Nom = @Nom, Prenom = @Prenom, Email = @Email WHERE Id = @Id", false, new { contact.Nom, contact.Prenom, contact.Email, contact.Id });
+
+            return rowsAffected > 0 ? contact : null;
         }
     }
 }

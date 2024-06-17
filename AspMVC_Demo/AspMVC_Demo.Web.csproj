@@ -16,4 +16,8 @@
     <ProjectReference Include="..\AspMVC_Demo.Domain\AspMVC_Demo.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 </Project>

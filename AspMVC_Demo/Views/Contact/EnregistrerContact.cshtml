@@ -9,6 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="~/css/Header.css">
     <link rel="stylesheet" type="text/css" href="~/css/GererContact.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Form.css">
 </head>
 <body>
     <header>
@@ -22,7 +23,7 @@
                     <a href="~/Contact/GererContact">Gestion des contacts</a>
                     <div class="dropdown-content">
                         <a href="~/Contact/AfficherContact">Afficher contact</a>
-                        <a href="#">Enregistrer contact</a>
+                        <a href="~/Contact/EnregistrerContact">Enregistrer contact</a>
                     </div>
                 </li>
             </ul>
@@ -34,28 +35,30 @@
             <li><a href="~/Contact/EnregistrerContact">Enregistrer un contact</a></li>
         </ul>
     </nav>
-    @if (!ViewContext.ModelState.IsValid)
+   @if (!ViewContext.ModelState.IsValid)
     {
         @Html.ValidationSummary(false, $"Le formulaire contient {ViewContext.ModelState.ErrorCount} erreur(s)")
-        ;
     }
-    <form class="form-enregistrement" method="post">
-        <div class="form-register">
-            <label>Prenom</label>
-            @Html.EditorFor(model => model.Prenom, new { @class = "form-control" }) <br />
-            @Html.ValidationMessageFor(expression: model => model.Prenom, message: null, htmlAttributes: new { @class = "text-danger" })
-        </div>
-        <div class="form-register">
-            <label>nom</label>
-            @Html.EditorFor(model => model.Nom, new { @class = "form-control" }) <br /> <br />
-            @Html.ValidationMessageFor(expression: model => model.Nom, message: null, htmlAttributes: new { @class = "text-danger" })
-        </div>
-        <div class="form-register">
-            <label>email</label>
-            @Html.EditorFor(model => model.Email, new { @class = "form-control" }) <br /> <br />
-            @Html.ValidationMessageFor(expression: model => model.Email, message: null, htmlAttributes: new { @class = "text-danger" })
-        </div>
-        <button class="form-register-btn" type="submit" value="send">Enregister le contact</button>
-    </form>
+    <div class="wrapper">
+        <form method="post">
+            <div class="input-box">
+                <label>Prenom</label>
+                @Html.EditorFor(model => model.Prenom, new { @class = "form-control" }) <br />
+                @Html.ValidationMessageFor(expression: model => model.Prenom, message: null, htmlAttributes: new { @class = "text-danger", placeholder = "Prenom" })
+            </div>
+            <div class="input-box">
+                <label>Nom</label>
+                @Html.EditorFor(model => model.Nom, new { @class = "form-control" }) <br /> <br />
+                @Html.ValidationMessageFor(expression: model => model.Nom, message: null, htmlAttributes: new { @class = "text-danger", placeholder = "Prenom" })
+            </div>
+            <div class="input-box">
+                <label>Email</label>
+                @Html.EditorFor(model => model.Email, new { @class = "form-control" }) <br /> <br />
+                @Html.ValidationMessageFor(expression: model => model.Email, message: null, htmlAttributes: new { @class = "text-danger", placeholder = "Prenom" })
+            </div>
+            <button class="btn" type="submit" value="send">Enregister le contact</button>
+        </form>
+    </div>
 </body>
 </html>
+
