@@ -1,5 +1,7 @@
+using AspMVC_Demo.BLL.Interfaces;
 using AspMVC_Demo.BLL.InterfaceService;
 using AspMVC_Demo.BLL.Service;
+using AspMVC_Demo.BLL.Services;
 using AspMVC_Demo.DAL.InterfaceRepositories;
 using AspMVC_Demo.DAL.Repositories;
 using Microsoft.Data.SqlClient;
@@ -12,6 +14,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IContactRepositories, ContactRepositorie>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAuthRepositorie, AuthRepositorie>();
 builder.Services.AddTransient<DbConnection>(sp => new SqlConnection(@"Server=GOS-VDI201\TFTIC;Database=AspMVC_Demo;Trusted_Connection=True;TrustServerCertificate=true"));
 
 var app = builder.Build();

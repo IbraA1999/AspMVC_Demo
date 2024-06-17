@@ -62,6 +62,9 @@
   <ItemGroup>
     <Build Include="Tables\Contact.sql" />
     <Build Include="StoredProcedures\CreateContact.sql" />
+    <Build Include="Tables\User_.sql" />
+    <Build Include="StoredProcedures\LoginUser.sql" />
+    <Build Include="StoredProcedures\CreateUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AspMVC_Demo.Db.publish.xml" />

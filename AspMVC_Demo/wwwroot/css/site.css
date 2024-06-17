@@ -41,6 +41,10 @@ th, td {
     text-align: center;
 }
 
+th {
+    color: white;
+}
+
 
 td:nth-child(even) {
     background-color: #f8f8f8;
@@ -50,20 +54,20 @@ td:nth-child(even) {
 .AfficherContact-Prenom {
     border-top-left-radius: 25px;
     padding: 20px 20px;
-    background: rgb(255,156,1);
-    background: linear-gradient(90deg, rgba(255,156,1,1) 42%, rgba(251,0,0,1) 100%);
+    background: rgb(253,70,40);
+    background: linear-gradient(90deg, rgba(253,70,40,1) 0%, rgba(252,176,69,1) 100%);
 }
 
 .AfficherContact-Nom {
     background: rgb(48,150,0);
-    padding: 20px 20px;
-    background: linear-gradient(90deg, rgba(48,150,0,1) 0%, rgba(19,203,12,1) 72%, rgba(108,255,0,1) 100%);
+    background: rgb(88,200,0);
+    background: linear-gradient(90deg, rgba(88,200,0,1) 0%, rgba(208,252,69,1) 100%);
 }
 
 .AfficherContact-Email {
     padding: 20px 20px;
-    background: rgb(251,220,2);
-    background: linear-gradient(90deg, rgba(251,220,2,1) 0%, rgba(255,68,0,1) 100%);
+    background: rgb(203,184,2);
+    background: linear-gradient(90deg, rgba(203,184,2,1) 0%, rgba(255,218,0,1) 100%);
 }
 
 .AfficherContact-Detail {

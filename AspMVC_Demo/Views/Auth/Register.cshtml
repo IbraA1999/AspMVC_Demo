@@ -1,0 +1,29 @@
+﻿@using AspMVC_Demo.Web.Models
+@model RegisterUser
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "S'inscrire";
+}
+
+    <div class="register-container">
+        <form asp-action="Register" method="post">
+            <label asp-for="Pseudo" class="control-label"></label>
+            <input asp-for="Pseudo" class="form-control" />
+            <span asp-validation-for="Pseudo" class="text-danger"></span>
+
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <label asp-for="PasswordCheck" class="control-label"></label>
+            <input asp-for="PasswordCheck" type="password" class="form-control" />
+            <span asp-validation-for="PasswordCheck" class="text-danger"></span>
+
+            <input type="submit" value="Enregistrer" class="btn btn-primary" />
+        </form>
+    </div>

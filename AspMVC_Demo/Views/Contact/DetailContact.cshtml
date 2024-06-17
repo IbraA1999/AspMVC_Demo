@@ -1,35 +1,12 @@
 ﻿@using AspMVC_Demo.Domain.Entities
 @model Contact
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="~/css/Header.css">
-    <link rel="stylesheet" type="text/css" href="~/css/GererContact.css">
-    <link rel="stylesheet" type="text/css" href="~/css/site.css">
-    
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <ul class="ul-topbar">
-                <li><a href="~/home/Index">Accueil</a></li>
-                <li><a href="~/home/Contact">Contact</a></li>
-                <li><a href="~/auth/login">Login</a></li>
-                <li><a href="~/auth/register">S'enregistrer</a></li>
-                <li class="dropdown">
-                    <a href="~/Contact/GererContact">Gestion des contacts</a>
-                    <div class="dropdown-content">
-                        <a href="~/Contact/AfficherContact">Afficher contact</a>
-                        <a href="~/Contact/EnregistrerContact">Enregistrer contact</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Me contacter";
+}
+
+<h1>Presentation</h1>
     <nav class="sous-navbar">
         <ul class="ul-sous-topbar">
             <li><a href="~/Contact/AfficherContact">Afficher contact</a></li>
@@ -62,7 +39,4 @@
             </div>
         </div>
     </div>
-
-</body>
-</html>
 
